@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const API_URL = 'https://9e06da9a-97cf-4701-adfc-9b9a5713bbb9.mock.pstmn.io/users';
 
-// ✅ A list of 25 human avatar image URLs
 const avatarList = [
   "https://randomuser.me/api/portraits/men/1.jpg",
   "https://randomuser.me/api/portraits/women/2.jpg",
@@ -41,10 +40,10 @@ export const fetchUsers = async () => {
       throw new Error("Invalid user data format");
     }
 
-    // ✅ Replace emoji-style avatars with real human faces
+
     const updatedUsers = users.slice(0, 100).map((user, index) => ({
       ...user,
-      avatar: avatarList[index % avatarList.length], // Assign avatar from the list
+      avatar: avatarList[index % avatarList.length], 
     }));
 
     return updatedUsers;
