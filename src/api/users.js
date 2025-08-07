@@ -42,7 +42,7 @@ export const fetchUsers = async () => {
     }
 
     // ✅ Replace emoji-style avatars with real human faces
-    const updatedUsers = users.slice(0, 25).map((user, index) => ({
+    const updatedUsers = users.slice(0, 100).map((user, index) => ({
       ...user,
       avatar: avatarList[index % avatarList.length], // Assign avatar from the list
     }));
